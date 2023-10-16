@@ -4,7 +4,7 @@ var ObjectIdSchema = Schema.ObjectId;
 var ObjectId = mongoose.Types.ObjectId;
 
 const budgetSchema = new mongoose.Schema({
-    title: { type: String, required: true },
+    title: { type: String, required: true, unique:true },
     value: { type: Number, required: true },
     color: {
         type: String,
@@ -21,3 +21,5 @@ const budgetSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Budget', budgetSchema);
+ 
+
